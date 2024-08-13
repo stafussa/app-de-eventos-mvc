@@ -4,8 +4,7 @@ const bodyParser = require("body-parser");
 const enableHotReload = require("./hot-reload");
 
 
-var exemploController = require("./controllers/exemplo");
-var produtoController = require("./controllers/produto");
+var loginController = require("./controllers/loginController");
 
 
 const app = express();
@@ -28,9 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
 enableHotReload(app);
 
 // Rotas
-app.get("/",exemploController.mostrarTelaDeExemplo);
-app.get("/produto",produtoController.mostrarTela);
-app.post('/adicionar-produto',produtoController.adicionarProduto);
+app.get("/",loginController.exibirPaginaLogin);
 
 
 // Inicie o servidor
