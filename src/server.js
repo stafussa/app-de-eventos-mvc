@@ -6,6 +6,8 @@ const enableHotReload = require("./hot-reload");
 
 var loginController = require("./controllers/loginController");
 var cadastroController = require("./controllers/cadastroController");
+var eventoController = require("./controllers/eventoController");
+
 
 
 
@@ -31,6 +33,8 @@ enableHotReload(app);
 // Rotas
 app.get("/",loginController.exibirPaginaLogin);
 app.get("/criar-conta",cadastroController.exibirPaginaDeCadastro);
+app.get("/eventos", eventoController.exibirPaginaDeEventos)
+app.get("/criar-evento", eventoController.exibirPaginaDeCriarEventos);
 
 
 
